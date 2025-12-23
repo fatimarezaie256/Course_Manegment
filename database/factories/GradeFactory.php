@@ -17,9 +17,9 @@ class GradeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
-            // "student_id"=>$this->faker->numberBtween(1,70),
-            // "subject_id"=>$this->faker->numberBtween(1,10),
+            "score"=>$this->faker->numberBetween(5,100),
+            "student_id"=>$this->faker->numberBetween(1,70),
+            "subject_id"=>$this->faker->numberBetween(1,10 ),
         ];
     }
 }

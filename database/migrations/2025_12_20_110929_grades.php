@@ -11,20 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grades', function (Blueprint $table) {
-            $table->id();
+            Schema::create('grades', function (Blueprint $table) {
+              $table->id();
             $table->integer('score');
             $table->foreignId('student_id')->constrained('students');
             $table->foreignId('subject_id')->constrained('subjects');
             $table->timestamps();
-        });
-    }
+    });
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    function down(): void
     {
-        Schema::dropIfExists('grades');
+          Schema::dropIfExists('subject_classes');
     }
+}
 };
