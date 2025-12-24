@@ -62,16 +62,17 @@
 <body>
     <div class="div">
 
-        <form action="" method="post">
+        <form action="{{ URL('create') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <h1 class="h1">Add Teachers</h1>
-         <input type="text" class="input" placeholder="your name">
-         <input type="text" class="input" placeholder="your name">
+         <input type="text" class="input" placeholder="your name" name="name">
+         <input type="text" class="input" placeholder="your phoneNumber" name="phoneNumber">
          <select name="" id="" class="option">
            @foreach($users as $user)
             <option value="{{$user->id}}">{{$user->name}}</option>
            @endforeach
          </select>
-         <input type="file" accept="image/*" class="file">
+         <input type="file" accept="image/*" class="file" name="image">
          <input type="submit" value="Save" class="btn">
         </form>
     </div>

@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Subject;
 use App\Models\Student;
 use App\Models\Grade;
+use App\Models\subjectClass;
 
 use App\Models\Classes;
 use App\Models\Teachers;
@@ -26,7 +27,8 @@ class DatabaseSeeder extends Seeder
         // Classes::factory(5)->create();
         // Student::factory(70)->create();
         // Teachers::factory(10)->create();
-        Grade::factory(15)->create();
+        // Grade::factory(15)->create();
+        subjectCLass::factory(20)->create();
         // User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

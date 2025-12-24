@@ -18,8 +18,8 @@ class SubjectClassFactory extends Factory
     {
         return [
             //
-            // "class_id"=>$this->faker->numberBetween(1,5),
-            // "subject_id"=>$this->faker->numberBetween(1,10),
+            "class_id"=>$this->faker->numberBetween(1,5),
+            "subject_id"=>$this->faker->numberBetween(1,10),
         ];
     }
 }
