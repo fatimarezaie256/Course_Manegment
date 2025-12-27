@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-use App\Models\Image;
+use App\Models\Images;
 use App\Models\Teachers;
 use Illuminate\Http\Request;
 
@@ -21,7 +21,18 @@ class TeachersController extends Controller
         "image"=>"nullable|mimes:png,jpg,gif,jpeg",
      ]);
      $path = null;
-     
-
+     if($request->hasFile("image")){
+        $path = $request->file("image")->store("images","public");
    }
+   $teacher->name = $request->name;
+   $teacher->phoneNumber = $request->phoneNumber;
+   $teacher->user_id = $request->user_id;
+    $teacher->save();
+  $image = new Images();
+  $image->path = $path;
+  $image->imageable_id = $teacher->id;
+  $image->imageable_type = Teachers::class;
+  $image->Save();
+  return redirect('/');
+}
 }
