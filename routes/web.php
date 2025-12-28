@@ -9,3 +9,7 @@ Route::get('/', function () {
 Route::get('students',[StudentController::class,'index']);
 Route::get('addTeacher',[TeachersController::class,'showAddForm']);
 Route::post('createTeacher',[TeachersController::class,'create']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
